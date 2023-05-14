@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Masq</string>
+    <string name="app_name">MASQ</string>
+    <string name="buttonStart">Начать</string>
+    <string name="descriptionStore">Онлайн магазин мужской одежды</string>
+    <string name="buttonRegister">Регистрация</string>
+    <string name="buttonLogin">Логин</string>
+    <string name="descriptionOnStart">Masq - это магазин мужской одежды</string>
+    <string name="authTextLogin">Авторизуйтесь</string>
+    <string name="passwordLogin">Password</string>
+    <string name="emailLogin">Email</string>
+    <string name="inToRegistration">Зарегистрируйтесь, если нет акканута. Регистрация</string>
+    <string name="g_forgot_password">Забыл пароль</string>
+    <string name="g_log_in">Логин</string>
+    <string name="regRegrister">Зарегистрироваться</string>
+    <string name="gmailInRegister">Gmail</string>
+    <string name="nameInRegister">Имя</string>
+    <string name="lastnameInRegister">Фамилия</string>
+    <string name="questionInRegister">У вас есть аккаунт? Войдите.</string>
+    <string name="mainRegInRegister">Регистрация</string>
+    <string name="gmailLogin">Gmail</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
