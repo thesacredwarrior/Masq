@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949373857290",
+    "project_id": "masq-73f16",
+    "storage_bucket": "masq-73f16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949373857290:android:5244b293b55837167c79f3",
+        "android_client_info": {
+          "package_name": "com.warriorsacred.masq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949373857290-ge7kbus5gmk5nusn7ca07nas63110i5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-ctn8G6Ipg5UnwIALSx4xIXchfz4K6Wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949373857290-ge7kbus5gmk5nusn7ca07nas63110i5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
