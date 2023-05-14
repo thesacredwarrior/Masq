@@ -12,10 +12,14 @@ import androidx.lifecycle.lifecycleScope
 import com.warriorsacred.masq.R
 import com.warriorsacred.masq.data.User
 import com.warriorsacred.masq.databinding.FragmentRegisterBinding
+import com.warriorsacred.masq.util.RegisterFieldsState
+import com.warriorsacred.masq.util.RegisterValidation
 import com.warriorsacred.masq.util.Resource
 import com.warriorsacred.masq.viewmodel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.withContext
 
 
 private const val TAG = "RegisterFragment"
@@ -45,7 +49,7 @@ class RegisterFragment : Fragment() {
                     regLastNameRegister.text.toString().trim(),
                     regEmailRegister.text.toString().trim()
                 )
-                var password = regEmailRegister.text.toString()
+                var password = regPasswordRegister.text.toString()
                 viewModel.createAccountWithEmailAndPassword(user, password)
             }
         }
@@ -64,6 +68,28 @@ class RegisterFragment : Fragment() {
                         Log.e(TAG, it.message.toString())
                     }
                     else -> Unit
+                }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.validation.collect { validation ->
+                if (validation.email is RegisterValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.regEmailRegister.apply{
+                            requestFocus()
+                            error = validation.email.message
+                        }
+                    }
+                }
+
+                if (validation.password is RegisterValidation.Failed) {
+                    withContext(Dispatchers.Main){
+                        binding.regPasswordRegister.apply{
+                            requestFocus()
+                            error = validation.password.message
+                        }
+                    }
                 }
             }
         }

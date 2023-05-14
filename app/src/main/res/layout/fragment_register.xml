@@ -62,7 +62,7 @@
     <EditText
         android:id="@+id/regLastNameRegister"
         android:layout_width="332dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
@@ -75,7 +75,7 @@
     <EditText
         android:id="@+id/regEmailRegister"
         android:layout_width="332dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
@@ -116,7 +116,9 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/regPasswordRegister"
-        tools:ignore="VisualLintButtonSize" />
+        tools:ignore="VisualLintButtonSize"
+        app:spinning_bar_color="@color/white" />
+
 
     <ImageView
         android:id="@+id/googleLoginRegister"
