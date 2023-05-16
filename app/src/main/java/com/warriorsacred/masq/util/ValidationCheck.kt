@@ -14,14 +14,14 @@ fun validateEmail(email: String): RegisterValidation {
 
 fun validatePassword(password: String): RegisterValidation {
     if (password.isEmpty())
-        return RegisterValidation.Failed("Password cannot be empty")
+        return RegisterValidation.Failed("Пароль не может быть пустым")
 
     if (password.length < 6)
-        return RegisterValidation.Failed("Password should be at least 6 characters long")
+        return RegisterValidation.Failed("Пароль должен быть не менее 6 символов")
 
     val pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$".toRegex()
     if (!password.matches(pattern))
-        return RegisterValidation.Failed("Password should contain at least one uppercase letter, one lowercase letter, and one digit, and no whitespace")
+        return RegisterValidation.Failed("Пароль должен содержать как минимум одну заглавную букву, одну строчную букву и одну цифру и не содержать пробелов.")
 
     return RegisterValidation.Success
 }

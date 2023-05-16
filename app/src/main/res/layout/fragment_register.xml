@@ -24,7 +24,7 @@
         style="@style/h4"
         android:layout_width="215dp"
         android:layout_height="43dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="@string/mainRegInRegister"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvDoYouHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -49,7 +49,7 @@
     <EditText
         android:id="@+id/regFirstNameRegister"
         android:layout_width="332dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDoYouHaveAccount" />
 
     <EditText
         android:id="@+id/regLastNameRegister"
@@ -90,7 +90,7 @@
         android:inputType="textPassword"
         android:id="@+id/regPasswordRegister"
         android:layout_width="332dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"

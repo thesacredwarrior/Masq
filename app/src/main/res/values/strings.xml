@@ -18,6 +18,7 @@
     <string name="questionInRegister">У вас есть аккаунт? Войдите.</string>
     <string name="mainRegInRegister">Регистрация</string>
     <string name="gmailLogin">Gmail</string>
+    <string name="authLogin">Авторизоваться</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

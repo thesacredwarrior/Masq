@@ -5,81 +5,70 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="220dp"
-            android:layout_height="200dp"
-            android:layout_alignTop="@+id/textView"
-            android:layout_alignEnd="@+id/textView"
-            android:layout_alignBottom="@+id/textView"
-            android:src="@drawable/circle"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="122dp"
-            tools:ignore="MissingConstraints" />
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="200dp"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:src="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="128dp"
-            android:text="@string/app_name"
-            android:textSize="120sp"
-            android:theme="@style/h4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.673"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="0dp"
+        android:text="@string/app_name"
+        android:textSize="120sp"
+        android:theme="@style/h4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/h3"
+        android:layout_width="378dp"
+        android:layout_height="69dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="43dp"
+        android:text="@string/descriptionOnStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <TextView
-            android:id="@+id/textView2"
-            style="@style/h3"
-            android:layout_width="392dp"
-            android:layout_height="63dp"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="0dp"
-            android:text="@string/descriptionOnStart"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonStart"
-            style="@style/blueButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_alignStart="@+id/textView"
-            android:layout_alignEnd="@+id/textView"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="126dp"
-            android:layout_marginTop="265dp"
-            android:layout_marginEnd="131dp"
-            android:layout_marginBottom="95dp"
-            android:background="@color/g_blue"
-            android:text="@string/buttonStart"
-            tools:ignore="VisualLintButtonSize"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="583dp" />
-
-    </RelativeLayout>
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonStart"
+        android:background="@color/g_blue"
+        style="@style/blueButtonStyle"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:text="@string/buttonStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
