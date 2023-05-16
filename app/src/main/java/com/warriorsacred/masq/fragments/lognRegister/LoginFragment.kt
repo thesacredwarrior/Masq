@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.warriorsacred.masq.R
 import com.warriorsacred.masq.activities.ShoppingActivity
 import com.warriorsacred.masq.databinding.FragmentLoginBinding
+import com.warriorsacred.masq.dialog.setupBottomSheetDialog
 import com.warriorsacred.masq.util.Resource
 import com.warriorsacred.masq.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,6 +48,28 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                 val email = edEmailLogin.text.toString().trim()
                 val password = edPasswordLogin.text.toString()
                 viewModel.login(email, password)
+            }
+        }
+
+        binding.tvForgotPassword.setOnClickListener {
+            setupBottomSheetDialog { email ->
+                viewModel.resetPassword(email)
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.resetPassword.collect{
+                when(it){
+                    is Resource.Loading -> {
+                    }
+                    is Resource.Success -> {
+                        Snackbar.make(requireView(), "Ссылка для сброса была отправлена на ваш адрес электронной почты", Snackbar.LENGTH_LONG).show()
+                    }
+                    is Resource.Error -> {
+                        Snackbar.make(requireView(), "Ошибка: ${it.message}", Snackbar.LENGTH_LONG).show()
+                    }
+                    else -> Unit
+                }
             }
         }
 
