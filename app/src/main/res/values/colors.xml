@@ -22,4 +22,6 @@
     <color name="g_red">#FF0000</color>
     <color name="g_text_hint">#969899</color>
     <color name="g_orange">#F8BA00</color>
+    <color name="g_blue_gray200">#92AAB5</color>
+    <color name="g_light_red">#FD2342</color>
 </resources>
