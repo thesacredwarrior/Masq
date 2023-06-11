@@ -1,6 +1,6 @@
 # Мобильное приложение "Магазин мужской одежды"
 
-![logo]()
+![logo](https://github.com/thesacredwarrior/Masq/assets/79377228/9d7a2beb-d434-463d-bf22-70234994637a)
 
 ## Описание
 
