@@ -32,6 +32,7 @@
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.3600112915039063" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/item_cart.xml" value="0.13990237470986186" />
+        <entry key="app/src/main/res/layout/item_cart_product.xml" value="0.20027682539345562" />
         <entry key="app/src/main/res/layout/item_product.xml" value="0.22909088134765626" />
         <entry key="app/src/main/res/layout/reset_password_dialog.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3098958333333333" />

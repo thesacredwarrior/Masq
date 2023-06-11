@@ -5,12 +5,15 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.warriorsacred.masq.R
 import com.warriorsacred.masq.data.Product
+import com.warriorsacred.masq.di.Cart
 
 
 class ProductAdapter(private val context: Context, private var productList: List<Product>) :
@@ -27,7 +30,13 @@ class ProductAdapter(private val context: Context, private var productList: List
         holder.title.text = product.title
         holder.price.text = "$${product.price}"
         Glide.with(context).load(product.image).into(holder.image)
+
+        holder.addToCartButton.setOnClickListener {
+            Cart.addItem(product)
+            Toast.makeText(context, "Товар добавлен в корзину", Toast.LENGTH_SHORT).show()
+        }
     }
+
 
     override fun getItemCount(): Int {
         return productList.size
@@ -37,5 +46,7 @@ class ProductAdapter(private val context: Context, private var productList: List
         val image: ImageView = itemView.findViewById(R.id.product_image)
         val title: TextView = itemView.findViewById(R.id.product_title)
         val price: TextView = itemView.findViewById(R.id.product_price)
+        val addToCartButton: Button = itemView.findViewById(R.id.add_to_cart_button)
     }
+
 }
