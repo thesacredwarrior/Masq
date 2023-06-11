@@ -13,6 +13,10 @@ object Cart {
         items.remove(item)
     }
 
+    fun removeItemAt(index: Int) {
+        items.removeAt(index)
+    }
+
     fun getItems(): List<Product> {
         return items
     }

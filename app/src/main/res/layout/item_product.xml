@@ -33,11 +33,13 @@
             android:textSize="16sp" />
 
         <Button
+            android:background="@color/g_blue"
             android:id="@+id/add_to_cart_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Add to Cart" />
+            style="@style/blueButtonStyle"
+            android:text="Добавить в корзину" />
 
     </LinearLayout>
 
