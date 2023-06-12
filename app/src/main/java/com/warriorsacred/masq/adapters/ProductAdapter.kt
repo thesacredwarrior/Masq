@@ -16,8 +16,16 @@ import com.warriorsacred.masq.data.Product
 import com.warriorsacred.masq.di.Cart
 
 
-class ProductAdapter(private val context: Context, private var productList: List<Product>) :
-    RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(
+    private val context: Context,
+    private var productList: List<Product>
+) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+    fun updateList(newList: List<Product>) {
+        productList = newList
+        notifyDataSetChanged()
+    }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {

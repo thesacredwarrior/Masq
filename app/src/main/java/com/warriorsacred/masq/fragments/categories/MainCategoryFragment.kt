@@ -6,22 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.warriorsacred.masq.R
 import com.warriorsacred.masq.adapters.ProductAdapter
 import com.warriorsacred.masq.data.Product
 import com.warriorsacred.masq.network.ApiClient
+import com.warriorsacred.masq.viewmodel.MainCategoryViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
 class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
-
+    private lateinit var mainCategoryViewModel: MainCategoryViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var productAdapter: ProductAdapter
-    private var productList: List<Product> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,35 +33,14 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
 
-        // Инициализация адаптера с пустым списком товаров
-        productAdapter = ProductAdapter(requireContext(), productList)
+        mainCategoryViewModel = ViewModelProvider(this).get(MainCategoryViewModel::class.java)
+        productAdapter = ProductAdapter(requireContext(), mainCategoryViewModel.getProductList().value ?: emptyList())
         recyclerView.adapter = productAdapter
 
-        loadProducts()
+        mainCategoryViewModel.getProductList().observe(viewLifecycleOwner, { products ->
+            productAdapter.updateList(products)
+        })
 
         return view
-    }
-
-
-    private fun loadProducts() {
-        ApiClient.api.getMensClothing().enqueue(object : Callback<List<Product>> {
-            override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
-                if (response.isSuccessful) {
-                    val products = response.body()
-                    if (products != null) {
-                        productList = products
-                        Log.d("MainCategoryFragment", "Received ${productList.size} products")
-                        productAdapter = ProductAdapter(requireContext(), productList)
-                        recyclerView.adapter = productAdapter
-                    } else {
-                        Log.d("MainCategoryFragment", "Empty product list")
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<List<Product>>, t: Throwable) {
-                Log.d("MainCategoryFragment", "API request failed")
-            }
-        })
     }
 }

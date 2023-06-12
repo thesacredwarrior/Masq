@@ -16,8 +16,15 @@ import com.warriorsacred.masq.helper.OnRemoveProductClickListener
 class CartProductAdapter(
     private val context: Context,
     private var productList: List<Product>,
-    private val onRemoveProductClickListener: OnRemoveProductClickListener
+    private val removeProductListener: OnRemoveProductClickListener
 ) : RecyclerView.Adapter<CartProductAdapter.CartProductViewHolder>() {
+
+
+    fun updateList(newList: List<Product>) {
+        productList = newList!!
+        notifyDataSetChanged()
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartProductViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_cart_product, parent, false)
@@ -31,7 +38,7 @@ class CartProductAdapter(
         Glide.with(context).load(product.image).into(holder.image)
 
         holder.removeButton.setOnClickListener {
-            onRemoveProductClickListener.onRemoveProduct(position)
+            removeProductListener.onRemoveProduct(position)
         }
     }
 

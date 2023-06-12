@@ -3,21 +3,23 @@ package com.warriorsacred.masq.di
 import com.warriorsacred.masq.data.Product
 
 object Cart {
-    private val items = mutableListOf<Product>()
+    private val productList: MutableList<Product> = mutableListOf()
 
-    fun addItem(item: Product) {
-        items.add(item)
+    fun addItem(product: Product) {
+        productList.add(product)
     }
 
-    fun removeItem(item: Product) {
-        items.remove(item)
+    fun removeItem(product: Product) {
+        productList.remove(product)
     }
 
-    fun removeItemAt(index: Int) {
-        items.removeAt(index)
+    fun removeItemAt(position: Int) {
+        if (position in 0 until productList.size) {
+            productList.removeAt(position)
+        }
     }
 
     fun getItems(): List<Product> {
-        return items
+        return productList
     }
 }
